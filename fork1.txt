@@ -1,0 +1,45 @@
+#include<sys/wait.h>
+#include<stdio.h>
+#include<unistd.h>
+#include<stdlib.h>
+#include<sys/types.h>
+
+int main()
+{
+pid_t id;
+int a;
+printf("enter the number:")
+scanf("%d",&a);
+if(a<0)
+{
+printf("negative number is entered");
+exit(0);
+}
+else if(a == 0)
+{
+printf("zero is entered.so,invalid");
+exit(0);
+}
+else
+{
+id=fork();
+if(id<0)
+{
+printf("fail in child creation");
+exit(0);
+}
+else if(id == 0)
+{
+int i;
+for(i=a;i>0;i=i/2)
+{
+printf("sequence : %d\t",i);
+}
+}
+else
+{
+wait(NULL);
+printf("\n sequence is printed");
+}
+}
+}
