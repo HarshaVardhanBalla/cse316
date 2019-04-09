@@ -39,7 +39,7 @@ printf("sequence : %d\t",i);
 else
 {
 wait(NULL);
-printf("\n sequence is printed");
+printf("\n Sequence printed");
 }
 }
 }
