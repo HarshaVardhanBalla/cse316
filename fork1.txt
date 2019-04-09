@@ -31,9 +31,11 @@ exit(0);
 else if(id == 0)
 {
 int i;
-for(i=a;i>0;i=i/2)
+i=a;
+while(i>0)
 {
-printf("sequence : %d\t",i);
+printf(" %d\t",i);
+i=i/2;
 }
 }
 else
